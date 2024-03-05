@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 public class InvalidUsernameAndInvalidPasswordLoginTest {
 
     private WebDriver driver;
-    private String baseUrl = "http://example.com/login"; // Replace with your actual login page URL
+    private String baseUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"; 
 
     @BeforeClass
     public void setUp() {
