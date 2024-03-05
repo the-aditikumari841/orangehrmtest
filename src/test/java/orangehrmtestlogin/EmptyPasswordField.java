@@ -29,15 +29,15 @@ public class EmptyPasswordField {
         driver.get(baseUrl);
 
         // Enter correct username
-        WebElement usernameField = driver.findElement(By.id("username"));
+        WebElement usernameField = driver.findElement(By.name("username"));
         usernameField.sendKeys("correctUsername");
 
         // Click on the login button
-        WebElement loginButton = driver.findElement(By.id("loginButton"));
+        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
         loginButton.click();
 
         // Verify error message is displayed for empty password
-        WebElement errorMessage = driver.findElement(By.id("Required"));
+        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"));
         Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed for empty password");
     }
 

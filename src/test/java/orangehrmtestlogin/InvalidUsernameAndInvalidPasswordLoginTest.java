@@ -29,19 +29,19 @@ public class InvalidUsernameAndInvalidPasswordLoginTest {
         driver.get(baseUrl);
 
         // Enter invalid username
-        WebElement usernameField = driver.findElement(By.id("username"));
+        WebElement usernameField = driver.findElement(By.name("username"));
         usernameField.sendKeys("invalidUsername");
 
         // Enter invalid password
-        WebElement passwordField = driver.findElement(By.id("password"));
+        WebElement passwordField = driver.findElement(By.name("password"));
         passwordField.sendKeys("invalidPassword");
 
         // Click on the login button
-        WebElement loginButton = driver.findElement(By.id("loginButton"));
+        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
         loginButton.click();
 
         // Verify error message is displayed
-        WebElement errorMessage = driver.findElement(By.id("Invalid credentials"));
+        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"));
         Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed for invalid username and password");
     }
 
