@@ -1,5 +1,6 @@
 package orangehrmtestlogin;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,41 +14,47 @@ public class InvalidUsernameAndValidPasswordLoginTest {
 
     private WebDriver driver;
     private String baseUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-    
+
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "path_to_chrome_driver");
+        // Setup WebDriver using WebDriver Manager
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
+
+    @Test(priority = 1)
+    public void testInvalidUsernameValidPassword() {
+        // Navigate to the login page
         driver.get(baseUrl);
-    }
-    
-    @Test
-    public void testInvalidUsername() {
-        String invalidUsername = "invalidusername";
-        String validPassword = "validpassword";
-        
+
+        // Enter invalid username
         WebElement usernameField = driver.findElement(By.id("username"));
+        usernameField.sendKeys("invalidUsername");
+
+        // Enter valid password
         WebElement passwordField = driver.findElement(By.id("password"));
-        WebElement loginButton = driver.findElement(By.id("loginBtn"));
-        
-        // Input invalid username
-        usernameField.sendKeys(invalidUsername);
-        
-        // Input valid password
-        passwordField.sendKeys(validPassword);
-        
-        // Click login button
+        passwordField.sendKeys("validPassword");
+
+        // Click on the login button
+        WebElement loginButton = driver.findElement(By.id("loginButton"));
         loginButton.click();
-        
-        // Wait for error message
+
+        // Verify error message is displayed
         WebElement errorMessage = driver.findElement(By.id("Invalid credentials"));
-        
-        // Assert that error message is displayed
-        Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed for invalid username");
+        Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed for invalid username");
     }
-    
+
+    // Add more tests for other scenarios if needed
+
     @AfterClass
     public void tearDown() {
+        // Close the browser
         driver.quit();
     }
 }
+
+
+
+
+

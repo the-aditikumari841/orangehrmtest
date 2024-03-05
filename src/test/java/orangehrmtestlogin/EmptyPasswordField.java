@@ -1,10 +1,6 @@
 package orangehrmtestlogin;
 
-
-
-
-
-
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,50 +8,62 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class EmptyPasswordField {
+
     private WebDriver driver;
     private String baseUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
-    
+
     @BeforeClass
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "path_to_chrome_driver");
+        // Setup WebDriver using WebDriver Manager
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
+    }
+
+    @Test(priority = 1)
+    public void testEmptyPasswordWithCorrectUsername() {
+        // Navigate to the login page
         driver.get(baseUrl);
-    }
-    
-    @Parameters({"username", "password"})
-    @Test
-    public void testLogin(String username, String password) {
+
+        // Enter correct username
         WebElement usernameField = driver.findElement(By.id("username"));
-        WebElement passwordField = driver.findElement(By.id("password"));
-        WebElement loginButton = driver.findElement(By.id("loginBtn"));
-        
-        // Input username
-        usernameField.sendKeys(username);
-        
-        // Input password
-        passwordField.sendKeys(password);
-        
-        // Click login button
+        usernameField.sendKeys("correctUsername");
+
+        // Click on the login button
+        WebElement loginButton = driver.findElement(By.id("loginButton"));
         loginButton.click();
-        
-        // Wait for error message
+
+        // Verify error message is displayed for empty password
         WebElement errorMessage = driver.findElement(By.id("Required"));
-        
-        // Assert that error message is displayed if password is empty
-        if (password.isEmpty()) {
-            Assert.assertTrue(errorMessage.isDisplayed(), "Error message should be displayed for empty password");
-        } else {
-            // Assert that error message is not displayed if password is not empty
-            Assert.assertFalse(errorMessage.isDisplayed(), "Error message should not be displayed for non-empty password");
-        }
+        Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed for empty password");
     }
-    
+
+    @Test(priority = 2)
+    public void testEmptyPasswordWithIncorrectUsername() {
+        // Navigate to the login page
+        driver.get(baseUrl);
+
+        // Enter incorrect username
+        WebElement usernameField = driver.findElement(By.id("username"));
+        usernameField.sendKeys("incorrectUsername");
+
+        // Click on the login button
+        WebElement loginButton = driver.findElement(By.id("loginButton"));
+        loginButton.click();
+
+        // Verify error message is displayed for empty password
+        WebElement errorMessage = driver.findElement(By.id("Required"));
+        Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed for empty password");
+    }
+
+    // Add more tests for other scenarios if needed
+
     @AfterClass
     public void tearDown() {
+        // Close the browser
         driver.quit();
     }
 }
