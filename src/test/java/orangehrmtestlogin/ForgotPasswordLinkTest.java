@@ -19,42 +19,38 @@ public class ForgotPasswordLinkTest {
 
     @BeforeClass
     public void setUp() {
-        // Setup WebDriver using WebDriverManager
+
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
 
-        //baseUrl =  ConfigReader.getProperty("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
 
     @Test(priority = 1)
-    public void testValidUsernameInvalidPassword() throws InterruptedException {
-        // Navigate to the login page
-       // driver.get(baseUrl);
+    public void testForgotPasswordButton() throws InterruptedException {
 
-        // Enter valid username
-    	Thread.sleep(3000);
-        WebElement usernameField = driver.findElement(By.name("username"));
-        usernameField.sendKeys("Admin");
-
-        // Enter invalid password
-        WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("admin1234");
         Thread.sleep(3000);
-        // Click on the login button
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
-        loginButton.click();
+        // Click on the "Forgot Password" link
+        WebElement ForgotPasswordButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[4]/p"));
+        ForgotPasswordButton.click();
         Thread.sleep(3000);
 
-        // Verify error message is displayed
-        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"));
-        Assert.assertTrue(errorMessage.getText().contains("Invalid credentials"), "Error message is not displayed for invalid login");
+       // WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"));
+        //Assert.assertTrue(errorMessage.getText().contains("Invalid credentials"), "Error message is not displayed for invalid login");
+
+
+        // Verify if the page redirects to the Forgot Password page
+//        String forgotPasswordPageTitle = driver.getTitle();
+//        Assert.assertEquals(forgotPasswordPageTitle, "Reset Password", "Forgot Password page title doesn't match");
+
+     
+        WebElement resetMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/form/h6"));
+        System.out.println(resetMessage.getText());
+        Assert.assertTrue(resetMessage.getText().contains("Reset Password"), "Reset Password message is not displayed");
     }
-    
     
     @AfterClass
     public void tearDown() {
-        // Close the browser
         driver.quit();
     }
 }

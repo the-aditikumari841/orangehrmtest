@@ -1,9 +1,6 @@
-
-
 package orangehrmtestlogin;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +11,7 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ValidUsernameAndInvalidPasswordLoginTest {
+public class ForgotAndResetPasswordFunctionalityTest {
     
     private WebDriver driver;
 
@@ -25,7 +22,7 @@ public class ValidUsernameAndInvalidPasswordLoginTest {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/requestPasswordResetCode");
     }
 
     @Test(priority = 1)
@@ -35,16 +32,14 @@ public class ValidUsernameAndInvalidPasswordLoginTest {
         WebElement usernameField = driver.findElement(By.name("username"));
         usernameField.sendKeys("Admin");
 
-        WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("admin1234");
         Thread.sleep(3000);
 
-        WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
-        loginButton.click();
+        WebElement resetPasswordButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/form/div[2]/button[2]"));
+        resetPasswordButton.click();
         Thread.sleep(3000);
 
-        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"));
-        Assert.assertTrue(errorMessage.getText().contains("Invalid credentials"), "Error message is not displayed for invalid login");
+        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div[1]/div/h6"));
+        Assert.assertTrue(errorMessage.getText().contains("Reset Password link sent successfully"));
     }
     
     

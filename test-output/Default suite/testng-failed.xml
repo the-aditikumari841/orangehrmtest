@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="orangehrmtestlogin.EmptyPasswordField">
+      <class name="orangehrmtestlogin.ForgotPasswordLinkTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="testForgotPasswordButton"/>
           <include name="setUp"/>
-          <include name="testEmptyPasswordWithIncorrectUsername"/>
-          <include name="testEmptyPasswordWithCorrectUsername"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- orangehrmtestlogin.EmptyPasswordField -->
+      </class> <!-- orangehrmtestlogin.ForgotPasswordLinkTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
