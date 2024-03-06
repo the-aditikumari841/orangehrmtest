@@ -2,7 +2,6 @@ package orangehrmtestlogin;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,60 +14,63 @@ import org.testng.annotations.Test;
 public class EmptyUsernameFieldWithCorrectOrIncorrectPassword {
 
     private WebDriver driver;
-    private String baseUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"; 
 
     @BeforeClass
     public void setUp() {
-        // Setup WebDriver using WebDriver Manager
+        // Setup WebDriver using WebDriverManager
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }    
+
+        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
+    }
+ 
 
     @Test(priority = 1)
-    public void testEmptyUsernameWithCorrectPassword() {
+    public void testEmptyUsernameWithCorrectPassword() throws InterruptedException {
         // Navigate to the login page
-        driver.get(baseUrl);
 
         // Enter empty username
-        WebElement usernameField = driver.findElement(By.id("username"));
-        usernameField.sendKeys("");
+    	 // Navigate to the login page
+    	Thread.sleep(3000);
+    	WebElement usernameField = driver.findElement(By.name("username"));
+    	usernameField.sendKeys("");
 
-        // Enter correct password
-        WebElement passwordField = driver.findElement(By.id("password"));
-        passwordField.sendKeys("correctPassword");
+         // Enter correct password
+    	WebElement passwordField = driver.findElement(By.name("password"));
+        passwordField.sendKeys("admin123");
 
+        Thread.sleep(3000);
         // Click on the login button
         WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
         loginButton.click();
+        Thread.sleep(3000);
 
         // Verify error message is displayed
-        WebElement errorMessage = driver.findElement(By.id("Required"));
-        Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed for empty username");
+        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/span"));
+        Assert.assertTrue(errorMessage.getText().contains("Required"), "Error message is not displayed for invalid login");
     }
 
     @Test(priority = 2)
-    public void testEmptyUsernameWithIncorrectPassword() {
+    public void testEmptyUsernameWithIncorrectPassword() throws InterruptedException {
         // Navigate to the login page
-        driver.get(baseUrl);
+    	Thread.sleep(3000);
+    	WebElement usernameField = driver.findElement(By.name("username"));
+    	usernameField.sendKeys("");
 
-        // Enter empty username
-        WebElement usernameField = driver.findElement(By.name("username"));
-        usernameField.sendKeys("");
+         // Enter correct password
+    	WebElement passwordField = driver.findElement(By.name("password"));
+        passwordField.sendKeys("admin1234");
 
-        // Enter incorrect password
-        WebElement passwordField = driver.findElement(By.name("password"));
-        passwordField.sendKeys("incorrectPassword");
-
+        Thread.sleep(3000);
         // Click on the login button
         WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
         loginButton.click();
+        Thread.sleep(3000);
 
         // Verify error message is displayed
-        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p"));
-        Assert.assertTrue(errorMessage.isDisplayed(), "Error message is not displayed for empty username");
+        WebElement errorMessage = driver.findElement(By.xpath("//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/span"));
+        Assert.assertTrue(errorMessage.getText().contains("Required"), "Error message is not displayed for invalid login");
     }
-
     // Add more tests for other scenarios if needed
 
     @AfterClass

@@ -1,5 +1,3 @@
-
-
 package orangehrmtestlogin;
 
 import org.openqa.selenium.By;
@@ -14,8 +12,8 @@ import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ValidUsernameAndInvalidPasswordLoginTest {
-    
+public class ForgotPasswordLinkTest {
+	
     private WebDriver driver;
 
 
