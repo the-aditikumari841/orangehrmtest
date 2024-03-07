@@ -35,8 +35,7 @@ public class ForgotPasswordLinkTest {
     
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/form/div[1]/div/span")
     private WebElement errorMessage;
-    
-    
+  
     @BeforeClass
     public void setUp() {
 
@@ -92,13 +91,9 @@ public class ForgotPasswordLinkTest {
 
         Assert.assertTrue(resetPasswordLinkSentMessage.getText().contains("Reset Password link sent successfully"));
     }
-    
-    
+        
     @AfterClass
     public void tearDown() {
         driver.quit();
     }
 }
-
-
-
