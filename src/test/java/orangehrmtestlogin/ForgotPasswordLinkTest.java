@@ -1,6 +1,5 @@
 package orangehrmtestlogin;
 
-import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -34,6 +33,10 @@ public class ForgotPasswordLinkTest {
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/h6")
     private WebElement resetPasswordLinkSentMessage;
     
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/form/div[1]/div/span")
+    private WebElement errorMessage;
+    
+    
     @BeforeClass
     public void setUp() {
 
@@ -42,9 +45,34 @@ public class ForgotPasswordLinkTest {
         PageFactory.initElements(driver, this);
         driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     }
+    
+    
 
     @Test(priority = 1)
     public void testForgotPasswordButton() throws InterruptedException {
+
+        Thread.sleep(3000);
+        ForgotPasswordButton.click();
+        Thread.sleep(3000);
+     
+
+        System.out.println(resetMessage.getText());
+        Assert.assertTrue(resetMessage.getText().contains("Reset Password"), "Reset Password message is not displayed");
+        
+        Thread.sleep(3000);
+        usernameField.sendKeys("");
+
+        Thread.sleep(3000);
+
+        resetPasswordButton.click();
+        Thread.sleep(3000);
+
+        Assert.assertTrue(errorMessage.getText().contains("Required"));
+    }
+    
+
+    @Test(priority = 2)
+    public void testEmptyPasswordWithIncorrectUsername() throws InterruptedException {
 
         Thread.sleep(3000);
         ForgotPasswordButton.click();
@@ -64,6 +92,7 @@ public class ForgotPasswordLinkTest {
 
         Assert.assertTrue(resetPasswordLinkSentMessage.getText().contains("Reset Password link sent successfully"));
     }
+    
     
     @AfterClass
     public void tearDown() {
