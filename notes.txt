@@ -13,3 +13,17 @@ Assert.assertTrue(errorMessage.getText().contains("Invalid credentials"), "Error
 // Close the browser
 driver.quit();
 
+Learn about relative XPath
+
+Use @FindBy 
+	@FindBy(how=How.NAME, using= "username")
+	private WebElement usnText;
+	
+	
+	
+	
+use url in config.properties
+
+write @BeforeClass and @AfterClass under common.utils 
+
+
