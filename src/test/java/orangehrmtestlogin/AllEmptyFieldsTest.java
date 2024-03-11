@@ -22,13 +22,13 @@ public class AllEmptyFieldsTest {
     @FindBy(name = "password")
     private WebElement passwordField;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
     private WebElement loginButton;
 
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[1]/div/span")
+    @FindBy(xpath = "//div[@class='orangehrm-login-slot-wrapper']//div[1]//div[1]//span[1]")
     private WebElement errorMessage1;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/span")
+    @FindBy(xpath = "//div[@class='orangehrm-login-form']//div[2]//div[1]//span[1]")
     private WebElement errorMessage2;
     
     @BeforeClass

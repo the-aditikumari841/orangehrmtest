@@ -18,22 +18,22 @@ public class ForgotPasswordLinkTest {
     private WebDriver driver;
     
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[4]/p")
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")
     private WebElement ForgotPasswordButton;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/form/h6")
+    @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 orangehrm-forgot-password-title']")
     private WebElement resetMessage;
     
     @FindBy(name = "username")
     private WebElement usernameField;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/form/div[2]/button[2]")
+    @FindBy(xpath = "//button[@type='submit']")
     private WebElement resetPasswordButton;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/form/div[1]/div/span")
+    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement errorMessage;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/h6")
+    @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 orangehrm-forgot-password-title']")
     private WebElement resetPasswordLinkSentMessage;
   
     @BeforeClass

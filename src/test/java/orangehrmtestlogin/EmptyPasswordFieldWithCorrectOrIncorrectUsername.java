@@ -22,10 +22,10 @@ public class EmptyPasswordFieldWithCorrectOrIncorrectUsername {
     @FindBy(name = "password")
     private WebElement passwordField;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
     private WebElement loginButton;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[2]/div/span")
+    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement errorMessage;
 
     

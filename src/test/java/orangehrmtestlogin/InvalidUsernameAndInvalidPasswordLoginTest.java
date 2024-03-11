@@ -26,10 +26,10 @@ public class InvalidUsernameAndInvalidPasswordLoginTest {
     @FindBy(name = "password")
     private WebElement passwordField;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button")
+    @FindBy(xpath = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
     private WebElement loginButton;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p")
+    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
     private WebElement errorMessage;
 
 
