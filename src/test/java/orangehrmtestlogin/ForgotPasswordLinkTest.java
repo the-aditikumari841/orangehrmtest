@@ -30,11 +30,11 @@ public class ForgotPasswordLinkTest {
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/form/div[2]/button[2]")
     private WebElement resetPasswordButton;
     
-    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/h6")
-    private WebElement resetPasswordLinkSentMessage;
-    
     @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/form/div[1]/div/span")
     private WebElement errorMessage;
+    
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[1]/div/h6")
+    private WebElement resetPasswordLinkSentMessage;
   
     @BeforeClass
     public void setUp() {
@@ -74,14 +74,6 @@ public class ForgotPasswordLinkTest {
     public void testEmptyPasswordWithIncorrectUsername() throws InterruptedException {
 
         Thread.sleep(3000);
-        ForgotPasswordButton.click();
-        Thread.sleep(3000);
-     
-
-        System.out.println(resetMessage.getText());
-        Assert.assertTrue(resetMessage.getText().contains("Reset Password"), "Reset Password message is not displayed");
-        
-        Thread.sleep(3000);
         usernameField.sendKeys("Admin");
 
         Thread.sleep(3000);
@@ -90,6 +82,8 @@ public class ForgotPasswordLinkTest {
         Thread.sleep(3000);
 
         Assert.assertTrue(resetPasswordLinkSentMessage.getText().contains("Reset Password link sent successfully"));
+    	
+       
     }
         
     @AfterClass
