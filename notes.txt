@@ -13,6 +13,7 @@ Assert.assertTrue(errorMessage.getText().contains("Invalid credentials"), "Error
 // Close the browser
 driver.quit();
 
+
 Learn about relative XPath
 
 Use @FindBy 

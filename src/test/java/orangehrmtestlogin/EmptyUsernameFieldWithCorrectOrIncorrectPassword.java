@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -16,16 +17,16 @@ public class EmptyUsernameFieldWithCorrectOrIncorrectPassword {
 
     private WebDriver driver;
         
-    @FindBy(name = "username")
+    @FindBy(how = How.NAME, using = "username")
     private WebElement usernameField;
     
-    @FindBy(name = "password")
+    @FindBy(how = How.NAME, using = "password")
     private WebElement passwordField;
     
-    @FindBy(xpath = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
+    @FindBy(how = How.XPATH, using = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
     private WebElement loginButton;
     
-    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    @FindBy(how = How.XPATH, using = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement errorMessage;
 
     

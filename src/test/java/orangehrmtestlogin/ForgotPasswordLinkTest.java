@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -17,23 +18,22 @@ public class ForgotPasswordLinkTest {
 	
     private WebDriver driver;
     
-    
-    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")
+    @FindBy(how = How.XPATH, using = "//p[@class='oxd-text oxd-text--p orangehrm-login-forgot-header']")
     private WebElement ForgotPasswordButton;
     
-    @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 orangehrm-forgot-password-title']")
+    @FindBy(how = How.XPATH, using = "//h6[@class='oxd-text oxd-text--h6 orangehrm-forgot-password-title']")
     private WebElement resetMessage;
     
-    @FindBy(name = "username")
+    @FindBy(how = How.NAME, using = "username")
     private WebElement usernameField;
     
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(how = How.XPATH, using =  "//button[@type='submit']")
     private WebElement resetPasswordButton;
     
-    @FindBy(xpath = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+    @FindBy(how = How.XPATH, using = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement errorMessage;
     
-    @FindBy(xpath = "//h6[@class='oxd-text oxd-text--h6 orangehrm-forgot-password-title']")
+    @FindBy(how = How.XPATH, using = "//h6[@class='oxd-text oxd-text--h6 orangehrm-forgot-password-title']")
     private WebElement resetPasswordLinkSentMessage;
   
     @BeforeClass

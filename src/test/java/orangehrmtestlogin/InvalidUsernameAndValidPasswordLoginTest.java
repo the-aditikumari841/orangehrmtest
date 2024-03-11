@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -16,16 +17,16 @@ public class InvalidUsernameAndValidPasswordLoginTest {
 
     private WebDriver driver;
     
-    @FindBy(name = "username")
+    @FindBy(how = How.NAME, using = "username")
     private WebElement usernameField;
     
-    @FindBy(name = "password")
+    @FindBy(how = How.NAME, using = "password")
     private WebElement passwordField;
     
-    @FindBy(xpath = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
+    @FindBy(how = How.XPATH, using = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
     private WebElement loginButton;
     
-    @FindBy(xpath = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
+    @FindBy(how = How.XPATH, using = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
     private WebElement errorMessage;
     
     @BeforeClass
