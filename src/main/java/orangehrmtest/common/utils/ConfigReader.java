@@ -4,6 +4,11 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class ConfigReader {
 
     private static Properties properties;

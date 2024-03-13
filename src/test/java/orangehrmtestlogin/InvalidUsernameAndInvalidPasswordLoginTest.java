@@ -1,61 +1,29 @@
+
 package orangehrmtestlogin;
 
-//import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
-//import org.openqa.selenium.support.How;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import org.openqa.selenium.support.PageFactory;
+import orangehrmtest.common.pages.LoginPage;
+import orangehrmtest.common.utils.supportBrowser;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
-public class InvalidUsernameAndInvalidPasswordLoginTest {
-	//@FindBy(how=How.NAME, using= "username")
-	//private WebElement usnText;
-    
-    private WebDriver driver;
-    
-    @FindBy(how = How.NAME, using = "username")
-    private WebElement usernameField;
-    
-    @FindBy(how = How.NAME, using = "password")
-    private WebElement passwordField;
-    
-    @FindBy(how = How.XPATH, using = "//div[@class='oxd-form-actions orangehrm-login-action']/button")
-    private WebElement loginButton;
-    
-    @FindBy(how = How.XPATH, using = "//p[@class='oxd-text oxd-text--p oxd-alert-content-text']")
-    private WebElement errorMessage;
-
-
-    @BeforeClass
-    public void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        PageFactory.initElements(driver, this);
-        driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
-    }
-    
+public class InvalidUsernameAndInvalidPasswordLoginTest extends supportBrowser {
+	
     @Test(priority = 1)
-    public void testInvalidUsernameInvalidPassword() throws InterruptedException {
-        Thread.sleep(3000);
-        usernameField.sendKeys("Admin1");
-        passwordField.sendKeys("admin1");
-        Thread.sleep(3000);
-        loginButton.click();
-        Thread.sleep(3000);
-        Assert.assertTrue(errorMessage.getText().contains("Invalid credentials"), "Error message is not displayed for invalid login");
-    }
+	public void testInvalidUsernameAndInvalidPassword() throws InterruptedException {
+	    LoginPage loginPage = getLoginPage();
+	    if (loginPage != null) {
+	        loginPage.navigateToLoginPage(); 
+	        Thread.sleep(3000);
+	        loginPage.enterUsername("Admin1");
+	        Thread.sleep(3000);
+	        loginPage.enterPassword("admin1234");
+	        loginPage.clickButton();
+	        Thread.sleep(3000);
+	        Assert.assertTrue(loginPage.getErrorMessage().contains("Invalid credentials"), "Error message is not displayed for invalid login");
+	    }
+	    else {
+	        Assert.fail("LoginPage is null. Initialization failed.");
+	    }
+	}
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-    }
 }
