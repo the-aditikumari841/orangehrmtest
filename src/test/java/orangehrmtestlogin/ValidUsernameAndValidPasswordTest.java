@@ -27,6 +27,6 @@ public class ValidUsernameAndValidPasswordTest extends supportBrowser {
 	        Assert.fail("LoginPage is null. Initialization failed.");
 	    }
 	    
-}
+	}
 }
 

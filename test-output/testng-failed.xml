@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest">
+      <class name="orangehrmtestlogin.EmptyPasswordFieldWithCorrectOrIncorrectUsername">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="testValidUsernameInvalidPassword"/>
+          <include name="testEmptyPasswordWithCorrectUsername"/>
         </methods>
-      </class> <!-- orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest -->
+      </class> <!-- orangehrmtestlogin.EmptyPasswordFieldWithCorrectOrIncorrectUsername -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
