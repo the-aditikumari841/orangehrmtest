@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-03-18T11:09:23 IST" name="Surefire suite" finished-at="2024-03-18T11:11:01 IST" duration-ms="98702">
+    <groups>
+    </groups>
+    <test started-at="2024-03-18T11:09:23 IST" name="Surefire test" finished-at="2024-03-18T11:11:01 IST" duration-ms="98702">
+      <class name="orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest@55b699ef]" started-at="2024-03-18T11:10:03 IST" name="setUp" finished-at="2024-03-18T11:10:04 IST" duration-ms="894" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testInvalidUsernameAndValidPassword()[pri:1, instance:orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest@55b699ef]" started-at="2024-03-18T11:10:04 IST" name="testInvalidUsernameAndValidPassword" finished-at="2024-03-18T11:10:17 IST" duration-ms="12938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidUsernameAndValidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest@55b699ef]" started-at="2024-03-18T11:10:17 IST" name="tearDown" finished-at="2024-03-18T11:10:17 IST" duration-ms="214" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest -->
+      <class name="orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest@2a3b5b47]" started-at="2024-03-18T11:09:38 IST" name="setUp" finished-at="2024-03-18T11:09:39 IST" duration-ms="885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testInvalidUsernameAndInvalidPassword()[pri:1, instance:orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest@2a3b5b47]" started-at="2024-03-18T11:09:39 IST" name="testInvalidUsernameAndInvalidPassword" finished-at="2024-03-18T11:10:01 IST" duration-ms="21728" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidUsernameAndInvalidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest@2a3b5b47]" started-at="2024-03-18T11:10:01 IST" name="tearDown" finished-at="2024-03-18T11:10:03 IST" duration-ms="1741" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest -->
+      <class name="orangehrmtestlogin.ValidUsernameAndValidPasswordTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtestlogin.ValidUsernameAndValidPasswordTest@18078bef]" started-at="2024-03-18T11:10:39 IST" name="setUp" finished-at="2024-03-18T11:10:40 IST" duration-ms="1035" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testValidUsernameInvalidPassword()[pri:1, instance:orangehrmtestlogin.ValidUsernameAndValidPasswordTest@18078bef]" started-at="2024-03-18T11:10:40 IST" name="testValidUsernameInvalidPassword" finished-at="2024-03-18T11:11:01 IST" duration-ms="20757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidUsernameInvalidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtestlogin.ValidUsernameAndValidPasswordTest@18078bef]" started-at="2024-03-18T11:11:01 IST" name="tearDown" finished-at="2024-03-18T11:11:01 IST" duration-ms="205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- orangehrmtestlogin.ValidUsernameAndValidPasswordTest -->
+      <class name="orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest@689604d9]" started-at="2024-03-18T11:10:17 IST" name="setUp" finished-at="2024-03-18T11:10:18 IST" duration-ms="1102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testValidUsernameInvalidPassword()[pri:1, instance:orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest@689604d9]" started-at="2024-03-18T11:10:18 IST" name="testValidUsernameInvalidPassword" finished-at="2024-03-18T11:10:39 IST" duration-ms="21079" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidUsernameInvalidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest@689604d9]" started-at="2024-03-18T11:10:39 IST" name="tearDown" finished-at="2024-03-18T11:10:39 IST" duration-ms="151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest -->
+      <class name="orangehrmtestlogin.AllEmptyFieldsTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtestlogin.AllEmptyFieldsTest@1283bb96]" started-at="2024-03-18T11:09:23 IST" name="setUp" finished-at="2024-03-18T11:09:25 IST" duration-ms="2038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testInvalidUsernameValidPassword()[pri:1, instance:orangehrmtestlogin.AllEmptyFieldsTest@1283bb96]" started-at="2024-03-18T11:09:25 IST" name="testInvalidUsernameValidPassword" finished-at="2024-03-18T11:09:38 IST" duration-ms="13568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testInvalidUsernameValidPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtestlogin.AllEmptyFieldsTest@1283bb96]" started-at="2024-03-18T11:09:38 IST" name="tearDown" finished-at="2024-03-18T11:09:38 IST" duration-ms="273" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- orangehrmtestlogin.AllEmptyFieldsTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

@@ -1,9 +1,7 @@
 
-
 package orangehrmtestlogin;
 
 import org.testng.Assert;
-
 import org.testng.annotations.Test;
 import orangehrmtest.common.pages.LoginPage;
 import orangehrmtest.common.utils.supportBrowser;
