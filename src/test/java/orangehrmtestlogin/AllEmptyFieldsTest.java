@@ -2,7 +2,6 @@ package orangehrmtestlogin;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import orangehrmtest.common.pages.LoginPage;
 import orangehrmtest.common.utils.supportBrowser;
 
 public class AllEmptyFieldsTest extends supportBrowser {
@@ -10,8 +9,9 @@ public class AllEmptyFieldsTest extends supportBrowser {
     @Test(priority = 1)
     public void testInvalidUsernameValidPassword() throws InterruptedException {
     
-    LoginPage loginPage = getLoginPage();
-    if (loginPage != null) {
+    	//LoginPage loginPage = getLoginPage();
+    	
+    	if (loginPage != null) {
         loginPage.navigateToLoginPage(); 
         Thread.sleep(3000);
         loginPage.enterUsername("");

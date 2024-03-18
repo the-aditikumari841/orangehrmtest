@@ -4,6 +4,7 @@ package orangehrmtest.common.pages;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -28,7 +29,7 @@ public class LoginPage {
     @FindBy(how = How.XPATH, using = "//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module']")
     private WebElement dashboard;
     
-    @FindBy(how = How.XPATH, using = "//div[@class='orangehrm-login-slot-wrapper']//div[1]//div[1]//span[1]")
+    @FindBy(how = How.XPATH, using = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
     private WebElement requiredMessage1;
     
     @FindBy(how = How.XPATH, using = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
@@ -37,6 +38,7 @@ public class LoginPage {
     public LoginPage(WebDriver driver, String loginPageUrl) {
         this.driver = driver;
         this.loginPageUrl = loginPageUrl;
+        //this.driver = new ChromeDriver();
         PageFactory.initElements(driver, this); 
     }
     

@@ -16,17 +16,18 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+
 public class supportBrowser {
 
     private static WebDriver driver;
-    private static LoginPage loginPage;
+    protected static LoginPage loginPage;
     private static String loginPageUrl;
     
-    private static JobTitlePage jobtitle;
+    public static JobTitlePage jobTitle;
     private static String jobTitleUrl;
     
     @BeforeClass
-    public static void setUp() {
+    public void setUp() {
         try {
             Properties properties = new Properties();
             FileInputStream file = new FileInputStream("src/main/resources/config.properties");
@@ -39,7 +40,7 @@ public class supportBrowser {
             driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
      
             loginPage = new LoginPage(driver , loginPageUrl); 
-            jobtitle = new JobTitlePage(driver, jobTitleUrl);
+            jobTitle = new JobTitlePage(driver, jobTitleUrl);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,9 +75,9 @@ public class supportBrowser {
 		return loginPage;
 	}
 	
-	public JobTitlePage getJobTitlePage() {
-		return jobtitle;
-	}
+//	public JobTitlePage getJobTitlePage() {
+//		return jobtitle;
+//	}
     
 	@AfterClass
 	public static void tearDown() {

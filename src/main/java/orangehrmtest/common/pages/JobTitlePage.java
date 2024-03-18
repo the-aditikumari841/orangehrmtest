@@ -1,11 +1,16 @@
+
 package orangehrmtest.common.pages;
 
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class JobTitlePage {
@@ -44,6 +49,7 @@ public class JobTitlePage {
     public JobTitlePage(WebDriver driver, String jobTitleUrl) {
         this.driver = driver;
         this.jobTitleUrl = jobTitleUrl;
+        //this.driver = new ChromeDriver();
         PageFactory.initElements(driver, this); 
     }
     

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 6 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Surefire_suite" class="navigator-link">
-              <span class="suite-name border-passed">Surefire suite</span>
+              <span class="suite-name border-failed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,41 +92,46 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">5 methods,   5 passed</span>
+                    <span class="method-stats">6 methods, 6 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods passed suite-Surefire_suite"> (hide)</a> <!-- hide-methods passed suite-Surefire_suite -->
-                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods passed suite-Surefire_suite"> (show)</a> <!-- show-methods passed suite-Surefire_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
+                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Surefire_suite">
+                    <div class="method-list-content failed suite-Surefire_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest" class="method navigator-link" hash-for-method="testInvalidUsernameAndInvalidPassword">testInvalidUsernameAndInvalidPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest" class="method navigator-link" hash-for-method="testInvalidUsernameAndValidPassword">testInvalidUsernameAndValidPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="orangehrmtestlogin.AllEmptyFieldsTest" class="method navigator-link" hash-for-method="testInvalidUsernameValidPassword">testInvalidUsernameValidPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="orangehrmtestlogin.ValidUsernameAndValidPasswordTest" class="method navigator-link" hash-for-method="testValidUsernameInvalidPassword">testValidUsernameInvalidPassword</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="orangehrmtestlogin.JobTitleFunctionalityTest" class="method navigator-link" hash-for-method="testJobTitleFunctionality">testJobTitleFunctionality</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-Surefire_suite" title="orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest" class="method navigator-link" hash-for-method="testValidUsernameInvalidPassword">testValidUsernameInvalidPassword</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Surefire_suite -->
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="orangehrmtestlogin.ValidUsernameAndValidPasswordTest" class="method navigator-link" hash-for-method="testValidUsernameInvalidPassword">testValidUsernameInvalidPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Surefire_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -138,9 +143,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
-          <div class="suite-Surefire_suite-class-passed">
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -149,13 +154,18 @@
                   <a name="testInvalidUsernameAndInvalidPassword">
                   </a> <!-- testInvalidUsernameAndInvalidPassword -->
                   <span class="method-name">testInvalidUsernameAndInvalidPassword</span>
+                  <div class="stack-trace">java.lang.AssertionError: LoginPage is null. Initialization failed.
+	at orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest.testInvalidUsernameAndInvalidPassword(InvalidUsernameAndInvalidPasswordLoginTest.java:25)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
-          <div class="suite-Surefire_suite-class-passed">
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">orangehrmtestlogin.ValidUsernameAndValidPasswordTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -164,28 +174,18 @@
                   <a name="testValidUsernameInvalidPassword">
                   </a> <!-- testValidUsernameInvalidPassword -->
                   <span class="method-name">testValidUsernameInvalidPassword</span>
+                  <div class="stack-trace">java.lang.AssertionError: LoginPage is null. Initialization failed.
+	at orangehrmtestlogin.ValidUsernameAndValidPasswordTest.testValidUsernameInvalidPassword(ValidUsernameAndValidPasswordTest.java:27)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
-          <div class="suite-Surefire_suite-class-passed">
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testValidUsernameInvalidPassword">
-                  </a> <!-- testValidUsernameInvalidPassword -->
-                  <span class="method-name">testValidUsernameInvalidPassword</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
-          <div class="suite-Surefire_suite-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
               <span class="class-name">orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -194,13 +194,38 @@
                   <a name="testInvalidUsernameAndValidPassword">
                   </a> <!-- testInvalidUsernameAndValidPassword -->
                   <span class="method-name">testInvalidUsernameAndValidPassword</span>
+                  <div class="stack-trace">java.lang.AssertionError: LoginPage is null. Initialization failed.
+	at orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest.testInvalidUsernameAndValidPassword(InvalidUsernameAndValidPasswordLoginTest.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
-          <div class="suite-Surefire_suite-class-passed">
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
+              <span class="class-name">orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testValidUsernameInvalidPassword">
+                  </a> <!-- testValidUsernameInvalidPassword -->
+                  <span class="method-name">testValidUsernameInvalidPassword</span>
+                  <div class="stack-trace">java.lang.AssertionError: LoginPage is null. Initialization failed.
+	at orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest.testValidUsernameInvalidPassword(ValidUsernameAndInvalidPasswordLoginTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
               <span class="class-name">orangehrmtestlogin.AllEmptyFieldsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -209,10 +234,35 @@
                   <a name="testInvalidUsernameValidPassword">
                   </a> <!-- testInvalidUsernameValidPassword -->
                   <span class="method-name">testInvalidUsernameValidPassword</span>
+                  <div class="stack-trace">java.lang.AssertionError: LoginPage is null. Initialization failed.
+	at orangehrmtestlogin.AllEmptyFieldsTest.testInvalidUsernameValidPassword(AllEmptyFieldsTest.java:26)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-passed -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
+          <div class="suite-Surefire_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">orangehrmtestlogin.JobTitleFunctionalityTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testJobTitleFunctionality">
+                  </a> <!-- testJobTitleFunctionality -->
+                  <span class="method-name">testJobTitleFunctionality</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;orangehrmtest.common.pages.JobTitlePage.navigateToJobTitle()&quot; because &quot;orangehrmtestlogin.JobTitleFunctionalityTest.jobTitle&quot; is null
+	at orangehrmtestlogin.JobTitleFunctionalityTest.testJobTitleFunctionality(JobTitleFunctionalityTest.java:15)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-failed -->
         </div> <!-- panel Surefire_suite -->
         <div panel-name="test-xml-Surefire_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -269,32 +319,36 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(5);
+data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testInvalidUsernameAndInvalidPassword')
-data.setCell(0, 2, 'orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest')
-data.setCell(0, 3, 21728);
+data.setCell(0, 1, 'testInvalidUsernameValidPassword')
+data.setCell(0, 2, 'orangehrmtestlogin.AllEmptyFieldsTest')
+data.setCell(0, 3, 15);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testValidUsernameInvalidPassword')
-data.setCell(1, 2, 'orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest')
-data.setCell(1, 3, 21079);
+data.setCell(1, 1, 'testJobTitleFunctionality')
+data.setCell(1, 2, 'orangehrmtestlogin.JobTitleFunctionalityTest')
+data.setCell(1, 3, 1);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'testValidUsernameInvalidPassword')
 data.setCell(2, 2, 'orangehrmtestlogin.ValidUsernameAndValidPasswordTest')
-data.setCell(2, 3, 20757);
+data.setCell(2, 3, 1);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'testInvalidUsernameValidPassword')
-data.setCell(3, 2, 'orangehrmtestlogin.AllEmptyFieldsTest')
-data.setCell(3, 3, 13568);
+data.setCell(3, 1, 'testInvalidUsernameAndValidPassword')
+data.setCell(3, 2, 'orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest')
+data.setCell(3, 3, 1);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'testInvalidUsernameAndValidPassword')
-data.setCell(4, 2, 'orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest')
-data.setCell(4, 3, 12938);
+data.setCell(4, 1, 'testValidUsernameInvalidPassword')
+data.setCell(4, 2, 'orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest')
+data.setCell(4, 3, 0);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testInvalidUsernameAndInvalidPassword')
+data.setCell(5, 2, 'orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest')
+data.setCell(5, 3, 0);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 18 ms</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -326,72 +380,99 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testInvalidUsernameValidPassword</span>
-                <span class="method-start">2056 ms</span>
+                <span class="method-start">2422 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">15628 ms</span>
+                <span class="method-start">2451 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">orangehrmtestlogin.InvalidUsernameAndInvalidPasswordLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">15906 ms</span>
+                <span class="method-start">2729 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testInvalidUsernameAndInvalidPassword</span>
-                <span class="method-start">16792 ms</span>
+                <span class="method-start">3825 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">38520 ms</span>
+                <span class="method-start">3826 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">orangehrmtestlogin.InvalidUsernameAndValidPasswordLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">40262 ms</span>
+                <span class="method-start">3969 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testInvalidUsernameAndValidPassword</span>
-                <span class="method-start">41157 ms</span>
+                <span class="method-start">4923 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">54095 ms</span>
+                <span class="method-start">4925 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">orangehrmtestlogin.JobTitleFunctionalityTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">5184 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testJobTitleFunctionality</span>
+                <span class="method-start">6129 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">6131 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">orangehrmtestlogin.ValidUsernameAndInvalidPasswordLoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">54310 ms</span>
+                <span class="method-start">6322 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testValidUsernameInvalidPassword</span>
-                <span class="method-start">55413 ms</span>
+                <span class="method-start">7277 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">76492 ms</span>
+                <span class="method-start">7279 ms</span>
               </div> <!-- configuration-class after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">orangehrmtestlogin.ValidUsernameAndValidPasswordTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">76644 ms</span>
+                <span class="method-start">7456 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">testValidUsernameInvalidPassword</span>
-                <span class="method-start">77680 ms</span>
+                <span class="method-start">8357 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">98438 ms</span>
+                <span class="method-start">8361 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

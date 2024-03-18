@@ -1,15 +1,16 @@
 package orangehrmtestlogin;
 
 import org.testng.Assert;
+
 import org.testng.annotations.Test;
-import orangehrmtest.common.pages.LoginPage;
+//import orangehrmtest.common.pages.LoginPage;
 import orangehrmtest.common.utils.supportBrowser;
 
 public class InvalidUsernameAndValidPasswordLoginTest extends supportBrowser {
 	
     @Test(priority = 1)
 	public void testInvalidUsernameAndValidPassword() throws InterruptedException {
-	    LoginPage loginPage = getLoginPage();
+	    //LoginPage loginPage = getLoginPage();
 	    if (loginPage != null) {
 	        loginPage.navigateToLoginPage(); 
 	        Thread.sleep(3000);

@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Mar 18 12:08:59 IST 2024</td>
+<td>Started on:</td><td>Mon Mar 18 17:36:41 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2904 ms)</td>
+<tr><td>Total time:</td><td>2 seconds (2149 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,8 +76,9 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='orangehrmtestlogin.JobTitleFunctionalityTest.testJobTitleFunctionality()'><b>testJobTitleFunctionality</b><br>Test class: orangehrmtestlogin.JobTitleFunctionalityTest</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;orangehrmtest.common.pages.JobTitlePage.navigateToJobTitle()&quot; because &quot;jobTitle&quot; is null
-	at orangehrmtestlogin.JobTitleFunctionalityTest.testJobTitleFunctionality(JobTitleFunctionalityTest.java:17)
+<td><div><pre>java.lang.AssertionError: Job Title Page is null. Initialization failed.
+	at org.testng.Assert.fail(Assert.java:99)
+	at orangehrmtestlogin.JobTitleFunctionalityTest.testJobTitleFunctionality(JobTitleFunctionalityTest.java:37)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -106,9 +107,10 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace2021835850", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2021835850'><pre>java.lang.NullPointerException: Cannot invoke &quot;orangehrmtest.common.pages.JobTitlePage.navigateToJobTitle()&quot; because &quot;jobTitle&quot; is null
-	at orangehrmtestlogin.JobTitleFunctionalityTest.testJobTitleFunctionality(JobTitleFunctionalityTest.java:17)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1734343965", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1734343965'><pre>java.lang.AssertionError: Job Title Page is null. Initialization failed.
+	at org.testng.Assert.fail(Assert.java:99)
+	at orangehrmtestlogin.JobTitleFunctionalityTest.testJobTitleFunctionality(JobTitleFunctionalityTest.java:37)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -139,7 +141,7 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>0</td>
-<td>orangehrmtestlogin.JobTitleFunctionalityTest@222545dc</td></tr>
+<td>orangehrmtestlogin.JobTitleFunctionalityTest@6ae5aa72</td></tr>
 </table><p>
 </body>
 </html>

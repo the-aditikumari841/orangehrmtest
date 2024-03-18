@@ -2,8 +2,9 @@ package orangehrmtestlogin;
 
 
 import org.testng.Assert;
+
 import org.testng.annotations.Test;
-import orangehrmtest.common.pages.LoginPage;
+//import orangehrmtest.common.pages.LoginPage;
 import orangehrmtest.common.utils.supportBrowser;
 
 public class EmptyPasswordFieldWithCorrectOrIncorrectUsername extends supportBrowser {
@@ -11,7 +12,7 @@ public class EmptyPasswordFieldWithCorrectOrIncorrectUsername extends supportBro
     @Test(priority = 1)
     public void testEmptyPasswordWithCorrectUsername() throws InterruptedException {
     
-    LoginPage loginPage = getLoginPage();
+    //LoginPage loginPage = getLoginPage();
     if (loginPage != null) {
         loginPage.navigateToLoginPage(); 
         Thread.sleep(3000);
@@ -30,7 +31,7 @@ public class EmptyPasswordFieldWithCorrectOrIncorrectUsername extends supportBro
     @Test(priority = 2)
     public void testEmptyPasswordWithIncorrectUsername() throws InterruptedException {
     
-    LoginPage loginPage = getLoginPage();
+    //LoginPage loginPage = getLoginPage();
     if (loginPage != null) {
         loginPage.navigateToLoginPage(); 
         Thread.sleep(3000);
