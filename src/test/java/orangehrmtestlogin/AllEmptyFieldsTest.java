@@ -28,4 +28,3 @@ public class AllEmptyFieldsTest extends supportBrowser {
   }
 }
 
-

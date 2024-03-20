@@ -2,24 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-18T17:36:41 IST" name="Default suite" finished-at="2024-03-18T17:36:43 IST" duration-ms="2149">
+  <suite started-at="2024-03-20T23:29:54 IST" name="Default suite" finished-at="2024-03-20T23:29:54 IST" duration-ms="113">
     <groups>
     </groups>
-    <test started-at="2024-03-18T17:36:41 IST" name="Default test" finished-at="2024-03-18T17:36:43 IST" duration-ms="2149">
-      <class name="orangehrmtestlogin.JobTitleFunctionalityTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtestlogin.JobTitleFunctionalityTest@6ae5aa72]" started-at="2024-03-18T17:36:41 IST" name="setUp" finished-at="2024-03-18T17:36:43 IST" duration-ms="1991" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="testJobTitleFunctionality()[pri:0, instance:orangehrmtestlogin.JobTitleFunctionalityTest@6ae5aa72]" started-at="2024-03-18T17:36:43 IST" name="testJobTitleFunctionality" finished-at="2024-03-18T17:36:43 IST" duration-ms="5" status="FAIL">
+    <test started-at="2024-03-20T23:29:54 IST" name="Default test" finished-at="2024-03-20T23:29:54 IST" duration-ms="113">
+      <class name="orangehrmtestlogin.ValidUsernameAndValidPasswordTest">
+        <test-method signature="testValidUsernameInvalidPassword()[pri:1, instance:orangehrmtestlogin.ValidUsernameAndValidPasswordTest@42e99e4a]" started-at="2024-03-20T23:29:54 IST" name="testValidUsernameInvalidPassword" finished-at="2024-03-20T23:29:54 IST" duration-ms="47" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Job Title Page is null. Initialization failed.]]>
+              <![CDATA[LoginPage is null. Initialization failed.]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Job Title Page is null. Initialization failed.
+              <![CDATA[java.lang.AssertionError: LoginPage is null. Initialization failed.
 at org.testng.Assert.fail(Assert.java:99)
-at orangehrmtestlogin.JobTitleFunctionalityTest.testJobTitleFunctionality(JobTitleFunctionalityTest.java:37)
+at orangehrmtestlogin.ValidUsernameAndValidPasswordTest.testValidUsernameInvalidPassword(ValidUsernameAndValidPasswordTest.java:28)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -53,12 +49,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testJobTitleFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtestlogin.JobTitleFunctionalityTest@6ae5aa72]" started-at="2024-03-18T17:36:43 IST" name="tearDown" finished-at="2024-03-18T17:36:43 IST" duration-ms="123" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- orangehrmtestlogin.JobTitleFunctionalityTest -->
+        </test-method> <!-- testValidUsernameInvalidPassword -->
+      </class> <!-- orangehrmtestlogin.ValidUsernameAndValidPasswordTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -48,4 +48,3 @@ public class EmptyPasswordFieldWithCorrectOrIncorrectUsername extends supportBro
   }
     
 }
-

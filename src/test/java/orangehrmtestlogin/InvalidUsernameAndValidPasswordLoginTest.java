@@ -27,4 +27,3 @@ public class InvalidUsernameAndValidPasswordLoginTest extends supportBrowser {
 	}
 
 }
-

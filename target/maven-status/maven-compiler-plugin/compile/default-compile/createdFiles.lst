@@ -1,0 +1,4 @@
+orangehrmtest\common\pages\JobTitlePage.class
+orangehrmtest\common\pages\LoginPage.class
+orangehrmtest\common\utils\ConfigReader.class
+orangehrmtest\common\utils\supportBrowser.class

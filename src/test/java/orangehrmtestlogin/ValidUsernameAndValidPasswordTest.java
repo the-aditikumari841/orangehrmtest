@@ -30,4 +30,3 @@ public class ValidUsernameAndValidPasswordTest extends supportBrowser {
 	    
 	}
 }
-
